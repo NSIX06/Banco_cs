@@ -1,0 +1,14 @@
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\bin\Debug\net7.0\Banco_cs.exe
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\bin\Debug\net7.0\Banco_cs.deps.json
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\bin\Debug\net7.0\Banco_cs.runtimeconfig.json
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\bin\Debug\net7.0\Banco_cs.dll
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\bin\Debug\net7.0\Banco_cs.pdb
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.GeneratedMSBuildEditorConfig.editorconfig
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.AssemblyInfoInputs.cache
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.AssemblyInfo.cs
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.csproj.CoreCompileInputs.cache
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.dll
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\refint\Banco_cs.dll
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.pdb
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\Banco_cs.genruntimeconfig.cache
+C:\ferramentas\Weberson\Banco\Banco_cs\Banco_cs\obj\Debug\net7.0\ref\Banco_cs.dll
