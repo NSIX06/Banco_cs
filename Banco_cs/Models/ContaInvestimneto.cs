@@ -9,5 +9,10 @@ namespace Banco_cs.Models
         public ContaInvestimneto(Titular titular, double saldoAbertura) : base(titular, saldoAbertura)
         {
         }
+
+        public override void ImprimirExtrato()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

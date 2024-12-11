@@ -15,5 +15,11 @@ namespace Banco_cs.bin
         {
         
         }
+
+        public override void ImprimirExtrato()
+        {
+            Console.WriteLine("Imprimindo extrato da conta conrrente!");
+        }
     }
+
 }

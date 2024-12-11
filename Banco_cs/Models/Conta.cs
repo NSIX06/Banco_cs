@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Banco_cs.Models
 {
-    public class Conta
+    public abstract class Conta
     {
         #region Atributos
         
@@ -90,6 +90,7 @@ namespace Banco_cs.Models
                 contaDestino.Depositar(valor); // Deposite na conta de destino
         }
 
+        public abstract void ImprimirExtrato();
 
         #endregion
     }

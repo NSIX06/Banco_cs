@@ -16,8 +16,12 @@ var endereco = new Endereco
 var titular01 = new Titular("Trevor", "12345", "78910", endereco);
 var titular02 = new Titular("Michael", "678910", "9101112", endereco);
 
+
+
 var conta1 = new ContaPoupanca(titular01, 100.0);
 var conta2 = new ContaCorrente(titular02);
+var conta3 = new ContaPoupanca(titular02);
+
 
 Console.WriteLine($"Saldo inicial conta1: {conta1.Saldo}");
 Console.WriteLine($"Saldo inicial conta2: {conta2.Saldo}");
@@ -35,3 +39,15 @@ catch (Exception ex)
 
 Console.WriteLine($"Saldo final conta1: {conta1.Saldo}");
 Console.WriteLine($"Saldo final conta2: {conta2.Saldo}");
+
+Console.WriteLine("Extrato conta1");
+conta1.ImprimirExtrato();
+
+Console.WriteLine("Extrato conta2");
+conta2.ImprimirExtrato();
+
+Console.WriteLine("Extrato conta3");
+conta3.ImprimirExtrato();
+
+
+Console.WriteLine();

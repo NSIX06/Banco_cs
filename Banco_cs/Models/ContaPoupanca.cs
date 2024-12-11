@@ -14,5 +14,10 @@ namespace Banco_cs.Models
         public ContaPoupanca(Titular titular, double saldoAbertura) : base(titular, saldoAbertura)
         {
         }
+
+        public override void ImprimirExtrato()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
