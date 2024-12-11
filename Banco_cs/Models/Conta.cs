@@ -38,6 +38,13 @@ namespace Banco_cs.Models
                     DataAbertura = DateTime.Now;
                 }
 
+                public Conta (Titular titular)
+                {
+                    Titular = titular;
+                    Saldo = 0;
+                    DataAbertura = DateTime.Now;
+                }
+
         #endregion
 
     
@@ -74,17 +81,15 @@ namespace Banco_cs.Models
         //*Função transferir com exeções
         public void Transferir(Conta contaDestino, double valor)
         {
-                if (valor < VALOR_MINIMO    )
-                    {
-                        throw new Exception("Valor minímo para transferencia é de R$"+ VALOR_MINIMO);
-                    }
-                    else if (valor > Saldo)
-                    {
-                        throw new Exception("Saldo insuficiente para transferencia, o seu saldo atual é de R$"+ VALOR_MINIMO);
-                    }
+            if (valor < VALOR_MINIMO)
+                    throw new Exception($"Valor mínimo para transferência é de R${VALOR_MINIMO}");
+            if (valor > Saldo)
+                    throw new Exception($"Saldo insuficiente para transferência. Saldo atual: R${Saldo}, Valor solicitado: R${valor}");
 
-                    contaDestino.Depositar(valor);
+                Saldo -= valor; // Subtraia do saldo da conta de origem
+                contaDestino.Depositar(valor); // Deposite na conta de destino
         }
+
 
         #endregion
     }
