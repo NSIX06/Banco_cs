@@ -2,9 +2,10 @@ namespace Banco_cs.Enums
 {
     public enum TipoMovimentacao
     {
-        AberturaConta,
-        Saque,
-        Deposito,
-        Transferencia
+        ABERTURA_CONTA,
+        SAQUE,
+        DEPOSITO,
+        TRANSFERENCIA,
+        USO_CHEQUE_ESPECIAL
     }
 }

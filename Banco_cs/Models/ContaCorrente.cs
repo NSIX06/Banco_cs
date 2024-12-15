@@ -18,7 +18,26 @@ namespace Banco_cs.bin
 
         public override void ImprimirExtrato()
         {
-            Console.WriteLine("Imprimindo extrato da conta conrrente!");
+            
+            Console.WriteLine("**************");
+            Console.WriteLine("* Extrato Conta Corrente *");
+            Console.WriteLine("**************");
+            Console.WriteLine();
+
+            Console.WriteLine("Gerado em: " +DateTime.Now);
+            Console.WriteLine();
+
+            foreach (var movimentacao in Movimentacoes)
+            {
+                Console.WriteLine(movimentacao.ToString());
+            }
+            System.Console.WriteLine("Salado atual: R$" + Saldo);
+            Console.WriteLine();
+      
+            Console.WriteLine("**************");
+            Console.WriteLine("* Fim do Extrato*");
+            Console.WriteLine("**************");
+            Console.WriteLine();
         }
     }
 

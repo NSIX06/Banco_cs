@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Banco_cs.Enums;
 
 namespace Banco_cs.Models
 {
@@ -10,18 +11,16 @@ namespace Banco_cs.Models
         #region Atributos
         
             //*Gets e sets
-        public Conta(Titular titular, double saldo, DateTime dataAbertura) 
-        {
-            Titular = titular;
-            Saldo = saldo;
-            DataAbertura = dataAbertura;
 
-        }
             public Titular Titular {get;set;}
             
             public double Saldo {get; private set;}
 
             public DateTime DataAbertura{get; private set;}
+
+            protected List<Movimentacao> Movimentacoes{get;  set;}
+
+             public double ChequeEspecial { get; private set; } // Limite de cheque especial
 
             //*Variável privada somente para leitura
             private readonly double VALOR_MINIMO = 10.0;
@@ -36,6 +35,15 @@ namespace Banco_cs.Models
                     Titular = titular;
                     Saldo = saldoAbertura;
                     DataAbertura = DateTime.Now;
+
+                    Movimentacoes = new List<Movimentacao>()
+                    {
+                        new Movimentacao(TipoMovimentacao.ABERTURA_CONTA, saldoAbertura)
+                    };
+                    
+                    //var movimentacao = new Movimentacao(TipoMovimentacao.ABERTURA_CONTA, saldoAbertura);
+
+                    //Movimentacoes.Add(new Movimentacao(TipoMovimentacao.ABERTURA_CONTA, saldoAbertura));
                 }
 
                 public Conta (Titular titular)
@@ -43,6 +51,11 @@ namespace Banco_cs.Models
                     Titular = titular;
                     Saldo = 0;
                     DataAbertura = DateTime.Now;
+
+                    Movimentacoes = new List<Movimentacao>()
+                    {
+                        new Movimentacao(TipoMovimentacao.ABERTURA_CONTA, Saldo)
+                    };
                 }
 
         #endregion
@@ -59,6 +72,7 @@ namespace Banco_cs.Models
                     }
 
                     Saldo = Saldo + valor;
+                    Movimentacoes.Add(new Movimentacao(TipoMovimentacao.DEPOSITO, valor));
             }
 
         //*Função sacar com exeções
@@ -75,10 +89,12 @@ namespace Banco_cs.Models
 
                     Saldo = Saldo - valor;
 
+                    Movimentacoes.Add(new Movimentacao(TipoMovimentacao.SAQUE, valor));
+
                     return valor;
             }
 
-        //*Função transferir com exeções
+        //*Função transferir com exeções  
         public void Transferir(Conta contaDestino, double valor)
         {
             if (valor < VALOR_MINIMO)
@@ -88,6 +104,7 @@ namespace Banco_cs.Models
 
                 Saldo -= valor; // Subtraia do saldo da conta de origem
                 contaDestino.Depositar(valor); // Deposite na conta de destino
+                Movimentacoes.Add(new Movimentacao(TipoMovimentacao.TRANSFERENCIA, valor));
         }
 
         public abstract void ImprimirExtrato();
